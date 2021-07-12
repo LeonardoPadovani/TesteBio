@@ -5,12 +5,8 @@
     <classes>
       <class name="Tests.UsuarioTests">
         <methods>
-          <include name="testDeletarUsuarioTabela"/>
-          <include name="acessarListaDeUsuarios"/>
-          <include name="quitDriver"/>
-          <include name="testEditarUsuarioTabela"/>
-          <include name="testConsultarUsuarioTabela"/>
-          <include name="setDriver"/>
+          <include name="goToHome"/>
+          <include name="tesInserirUsuario"/>
         </methods>
       </class> <!-- Tests.UsuarioTests -->
     </classes>

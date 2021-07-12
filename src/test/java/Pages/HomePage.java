@@ -1,6 +1,6 @@
 package Pages;
 
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.*;
 import org.openqa.selenium.By;
 
 
@@ -19,6 +19,9 @@ public class HomePage {
 		$(By.linkText("Criar Usuários")).click();
 	}
 	
+	public void clicarSubMenuListaUsuarios() {
+		$(By.linkText("Lista de Usuários")).click();
+	}
 	
 	
 

@@ -4,6 +4,8 @@ import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.Test;
 
+import com.codeborne.selenide.Condition;
+
 import DataFactory.UsuariosFactory;
 import Pages.HomePage;
 import Pages.UsuariosPage;
@@ -25,6 +27,13 @@ public class UsuarioTests extends BaseTest{
 		usuariosPage.inserirNovoUsuario(usuario);
 		String msg = usuariosPage.getMsgIncluidoSucesso(); 
 		assertEquals(msg, "Usuário Criado com sucesso");
+		
+		home.clicarMenuFormulario();
+		home.clicarSubMenuListaUsuarios();
+		usuariosPage.itens().findBy(Condition.text(usuario.getNome())).shouldBe(Condition.visible);
+		
+		
+		
 	}
 	
 

@@ -1,8 +1,10 @@
 package Pages;
 
-import static com.codeborne.selenide.Selenide.$;
-
+import static com.codeborne.selenide.Selenide.*;
 import org.openqa.selenium.By;
+
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 
 import Pojos.Usuario;
 import Tests.BaseTest;
@@ -66,8 +68,14 @@ public class UsuariosPage extends BaseTest{
 		String msg = $("#notice").getText();
 		return msg;
 	}
-
-			
+	
+	
+	public ElementsCollection itens () {
+		return $$("table tbody tr");
+				
+	}
+	
+	
 	
 
 }
