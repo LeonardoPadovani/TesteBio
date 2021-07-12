@@ -2,6 +2,7 @@ package Tests;
 
 import static org.testng.Assert.assertEquals;
 
+import org.openqa.selenium.support.ui.Sleeper;
 import org.testng.annotations.Test;
 
 import com.codeborne.selenide.Condition;
@@ -31,8 +32,13 @@ public class UsuarioTests extends BaseTest{
 		home.clicarMenuFormulario();
 		home.clicarSubMenuListaUsuarios();
 		usuariosPage.itens().findBy(Condition.text(usuario.getNome())).shouldBe(Condition.visible);
+		usuariosPage.consultarUsuario(usuario.getEmail());
 		
+		String nome = usuariosPage.GetNome();
+		String ultimoNome = usuariosPage.GetUltimoNome();
 		
+		assertEquals(nome, "Nome: " + usuario.getNome());
+		assertEquals(ultimoNome, "Ultimo Nome: " + usuario.getUltimoNome());
 		
 	}
 	

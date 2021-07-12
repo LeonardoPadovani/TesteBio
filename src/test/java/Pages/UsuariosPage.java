@@ -44,6 +44,38 @@ public class UsuariosPage extends BaseTest{
 		$("#user_age").sendKeys(idade);
 	}
 	
+	public String GetNome() {
+		return $("body div[class='row'] div[class='row'] p:nth-child(1)").getText();
+	}
+	
+	public String GetUltimoNome() {
+		return $("body div[class='row'] div[class='row'] p:nth-child(2)").getText();
+	}
+	
+	public String GetEmail() {
+		return $("body div[class='row'] div[class='row'] p:nth-child(3)").getText();
+	}
+	
+	public String GetEndereco() {
+		return $("body div[class='row'] div[class='row'] p:nth-child(4)").getText();
+	}
+	
+	public String GetUniversidade() {
+		return $("body div[class='row'] div[class='row'] p:nth-child(5)").getText();
+	}
+	
+	public String GetProfissao() {
+		return $("body div[class='row'] div[class='row'] p:nth-child(6)").getText();
+	}
+	
+	public String GetGenero() {
+		return $("body div[class='row'] div[class='row'] p:nth-child(7)").getText();
+	}
+	
+	public String GetIdade() {
+		return $("body div[class='row'] div[class='row'] p:nth-child(8)").getText();
+	}
+	
 	public void clicarBtnCriar() {
 		$("input[value='Criar']").click();
 	}
@@ -75,7 +107,13 @@ public class UsuariosPage extends BaseTest{
 				
 	}
 	
-	
+		
+	public void consultarUsuario(String email) {
+		ElementsCollection item = $$("table tbody tr");
+		item.find(Condition.text(email)).find("tbody tr td:nth-child(9)").click();
+		
+		
+	}
 	
 
 }
